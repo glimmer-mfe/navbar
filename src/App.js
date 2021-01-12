@@ -15,7 +15,7 @@ class App extends Component {
 const appHistory = createBrowserHistory();
 
 function startRouting() {
-  document.addEventListener("click", e => {
+  document.querySelector('#global-nav').addEventListener("click", e => {
     if (e.target.nodeName === "A") {
       const href = e.target.getAttribute("href");
       appHistory.push(href);
@@ -28,7 +28,7 @@ setComponentTemplate(
   createTemplate(
     { startRouting },
     `
-    <nav {{startRouting}}>
+    <nav id="global-nav" {{startRouting}}>
     <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/people">People</a></li>
